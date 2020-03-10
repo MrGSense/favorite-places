@@ -1,0 +1,24 @@
+{
+  "name": "favorite-places",
+  "version": "1.0.0",
+  "description": "Map application using Leaflet.js that allows users to share their favorite places on a map",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MrGSense/favorite-places.git"
+  },
+  "author": "Kyle Fetterhoff",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MrGSense/favorite-places/issues"
+  },
+  "homepage": "https://github.com/MrGSense/favorite-places#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^5.9.4"
+  }
+}
