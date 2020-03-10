@@ -1,3 +1,4 @@
+// MAP
 const mymap = L.map("map").setView([39.9612, -82.9988], 10);
 
 L.tileLayer(
