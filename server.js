@@ -8,13 +8,31 @@ let app = express();
 // Express Parsing
 app.use(express.json());
 
+// Get MongoURI
+const db = config.mongoURI;
+
+// Database Connection
+mongoose
+  .connect(db, {
+    useNewUrlParser: true,
+    useCreateIndex: true,
+    useUnifiedTopology: true,
+    useFindAndModify: false
+  })
+  .then(() => console.log("MongoDB Connected"))
+  .catch(err => console.log(err));
+
+// Routes
+app.use("/api/places", require("./routes/api/places"));
+
+// Production
 if (process.env.NODE_ENV === "production") {
-    app.use(express.static("client/dist"));
-  
-    app.get("*", (req, res) => {
-      res.sendFile(path.resolve(__dirname, "client", "dist", "index.html"));
-    });
-  }
+  app.use(express.static("client/dist"));
+
+  app.get("*", (req, res) => {
+    res.sendFile(path.resolve(__dirname, "client", "dist", "index.html"));
+  });
+}
 
 const port = process.env.PORT || 5000;
 
