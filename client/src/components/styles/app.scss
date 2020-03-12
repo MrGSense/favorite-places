@@ -1,9 +1,13 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
 }
 
 body {
-    font-family: sans-serif;
+  background-color: #141414;
+}
+
+#map {
+  height: 500px;
 }
